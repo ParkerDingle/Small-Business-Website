@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam's Services LLC | Home Repair & Maintenance</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="icon" type="image/png" href="AdamLogo.png">
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo-container">
+            <img src="AdamLogo.png" alt="Adam's Services LLC Logo" class="nav-logo">
+            <span class="logo-text">ADAM'S SERVICES LLC</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#projects">Our Work</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="https://www.yelp.com" target="_blank">Yelp Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="nav-btn">Get a Quote</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Quality Workmanship, Every Time.</h1>
+            <p>Professional home repair, maintenance, and renovation services you can trust.</p>
+            <a href="#contact" class="main-cta-button">Call (555) 012-3456</a>
+        </div>
+    </header>
+
+    <section id="projects" class="container">
+        <h2 class="section-title">Before & After</h2>
+        <p class="section-subtitle">Click the arrow to see the transformation.</p>
+
+        <div class="project-card">
+            <h3>Kitchen Remodel</h3>
+            <div class="ba-interactive" id="project1">
+                <div class="image-stack">
+                    <img src="AfterKitchen.png" class="img-after" alt="Kitchen After">
+                    <img src="BeforeKitchen.png" class="img-before" alt="Kitchen Before">
+                    <span class="ba-label">BEFORE</span>
+                </div>
+                <button class="arrow-btn" onclick="toggleCompare('project1')">&#10140;</button>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Bathroom Tile Repair</h3>
+            <div class="ba-interactive" id="project2">
+                <div class="image-stack">
+                    <img src="https://via.placeholder.com/800x500/0F3D64/ffffff?text=AFTER:+Clean+Tiles" class="img-after" alt="Tile After">
+                    <img src="https://via.placeholder.com/800x500/6493B6/ffffff?text=BEFORE:+Damaged+Tiles" class="img-before" alt="Tile Before">
+                    <span class="ba-label">BEFORE</span>
+                </div>
+                <button class="arrow-btn" onclick="toggleCompare('project2')">&#10140;</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Estimated Pricing</h2>
+            <p class="section-subtitle">Transparent pricing for common services. Final quotes may vary based on scope.</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3>Minor Repairs</h3>
+                        <p>Quick fixes & maintenance</p>
+                    </div>
+                    <div class="price-tag">
+                        <span class="currency">$</span>150
+                        <span class="period">/ visit minimum</span>
+                    </div>
+                    <ul class="feature-list">
+                        <li>&#10003; Leaky Faucet Repair</li>
+                        <li>&#10003; Drywall Patching</li>
+                        <li>&#10003; Door Adjustments</li>
+                        <li>&#10003; Up to 2 hours labor</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="most-popular-badge">MOST POPULAR</div>
+                    <div class="card-header">
+                        <h3>Room Painting</h3>
+                        <p>Refresh your space</p>
+                    </div>
+                    <div class="price-tag">
+                        <span class="currency">$</span>350
+                        <span class="period">/ room starting at</span>
+                    </div>
+                    <ul class="feature-list">
+                        <li>&#10003; Walls & Trim</li>
+                        <li>&#10003; Minor Surface Prep</li>
+                        <li>&#10003; Two Coats of Paint</li>
+                        <li>&#10003; Clean Up Included</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3>Renovations</h3>
+                        <p>Kitchens, Baths & Flooring</p>
+                    </div>
+                    <div class="price-tag">
+                        <span class="currency">$</span>1,500
+                        <span class="period">/ starting at</span>
+                    </div>
+                    <ul class="feature-list">
+                        <li>&#10003; Demolition & Haul Away</li>
+                        <li>&#10003; Tile & Flooring Install</li>
+                        <li>&#10003; Cabinet Installation</li>
+                        <li>&#10003; Custom Project Management</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="pricing-note">*Prices are estimates only. Materials are not included in labor estimates.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Contact Us</h2>
+            
+            <div class="contact-grid" style="justify-content: center; text-align: center;">
+                
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Ready to start your project? Call or email us today for a free estimate.</p>
+                    
+                    <div class="info-item">
+                        <strong>Phone:</strong> <br>
+                        (555) 123-4567
+                    </div>
+                    <div class="info-item">
+                        <strong>Email:</strong> <br>
+                        adam@adamsservices.com
+                    </div>
+                    <div class="info-item">
+                        <strong>Service Area:</strong> <br>
+                        Serving the Greater Metro Area
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Adam's Services LLC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleCompare(projectId) {
+            const container = document.getElementById(projectId);
+            container.classList.toggle('revealed');
+            
+            const label = container.querySelector('.ba-label');
+            if (container.classList.contains('revealed')) {
+                label.innerText = "AFTER";
+                label.style.backgroundColor = "var(--accent-orange)";
+            } else {
+                label.innerText = "BEFORE";
+                label.style.backgroundColor = "#333";
+            }
+        }
+    </script>
+</body>
+</html>

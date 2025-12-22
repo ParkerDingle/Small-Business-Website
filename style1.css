@@ -1,0 +1,264 @@
+/* --- 1. VARIABLES --- */
+:root {
+    --primary-blue: #0F3D64;    /* Deep Navy */
+    --secondary-blue: #6493B6;  /* Steel Blue */
+    --accent-orange: #E67E22;   /* Action Color */
+    --white: #ffffff;
+    --light-gray: #f4f4f4;
+    --text-dark: #333333;
+}
+
+/* --- 2. GLOBAL STYLES --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 { color: var(--primary-blue); }
+
+/* --- 3. NAVIGATION --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    background-color: var(--white);
+    border-bottom: 4px solid var(--secondary-blue);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+}
+
+.nav-logo { height: 60px; width: auto; }
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links { list-style: none; display: flex; gap: 20px; align-items: center; padding: 0; margin: 0; }
+.nav-links a { text-decoration: none; color: var(--primary-blue); font-weight: bold; transition: color 0.3s; }
+.nav-links a:hover { color: var(--secondary-blue); }
+
+.nav-btn {
+    background-color: var(--accent-orange);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+.nav-btn:hover { background-color: #d35400; }
+
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    .logo-text { font-size: 1.1rem; }
+    .nav-logo { height: 50px; }
+}
+
+/* --- 4. HERO SECTION --- */
+.hero {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 6rem 1rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #164e7d 100%);
+}
+
+.hero h1 { color: var(--white); font-size: 2.5rem; margin-bottom: 10px; margin-top: 0; }
+
+.main-cta-button {
+    display: inline-block;
+    background-color: var(--accent-orange);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+.main-cta-button:hover { background-color: #d35400; transform: scale(1.05); }
+
+/* --- 5. INTERACTIVE BEFORE/AFTER STYLES --- */
+.section-title { text-align: center; font-size: 2rem; margin-top: 3rem; margin-bottom: 0.5rem; }
+.section-subtitle { text-align: center; margin-bottom: 3rem; color: #666; }
+
+.project-card { margin-bottom: 50px; }
+.project-card h3 { text-align: center; margin-bottom: 15px; }
+
+.ba-interactive { position: relative; max-width: 800px; margin: 0 auto; }
+
+.image-stack {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 62.5%;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background-color: #ddd;
+}
+
+.image-stack img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.img-after { z-index: 1; }
+.img-before { z-index: 2; opacity: 1; }
+.revealed .img-before { opacity: 0; }
+
+.ba-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #333;
+    color: white;
+    padding: 5px 12px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 3;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.arrow-btn {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%);
+    background-color: var(--accent-orange);
+    color: white;
+    border: 4px solid white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.arrow-btn:hover { background-color: #d35400; transform: translateY(-50%) scale(1.1); }
+.revealed .arrow-btn { transform: translateY(-50%) rotate(180deg); background-color: var(--primary-blue); }
+
+@media (max-width: 900px) {
+    .arrow-btn { right: 10px; width: 50px; height: 50px; font-size: 1.5rem; }
+}
+
+/* --- 6. PRICING SECTION --- */
+.pricing-section { background-color: #fafafa; padding: 4rem 0; border-top: 1px solid #ddd; }
+
+.pricing-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 2rem; }
+
+.pricing-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: var(--accent-orange);
+}
+
+.pricing-card.popular { border: 2px solid var(--primary-blue); background-color: #f0f7fc; }
+
+.most-popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-orange);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.price-tag { margin: 20px 0; color: var(--text-dark); font-weight: bold; font-size: 2.5rem; }
+.price-tag .currency { font-size: 1.5rem; vertical-align: top; color: var(--accent-orange); }
+.price-tag .period { display: block; font-size: 0.9rem; color: #888; font-weight: normal; margin-top: -5px; }
+
+.feature-list { list-style: none; padding: 0; margin: 20px 0 0 0; text-align: left; border-top: 1px solid #eee; padding-top: 20px; }
+.feature-list li { margin-bottom: 10px; color: #555; font-size: 0.95rem; }
+.pricing-note { text-align: center; font-size: 0.85rem; color: #999; margin-top: 30px; font-style: italic; }
+
+/* --- 7. CONTACT SECTION --- */
+.contact-section { background-color: var(--primary-blue); color: white; padding: 4rem 0; }
+
+.contact-grid { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 2rem; }
+.contact-info { flex: 1; min-width: 300px; }
+.contact-info h3 { color: var(--accent-orange); }
+.info-item { margin-bottom: 20px; }
+
+/* Styles for the removed form are kept here just in case you ever want it back, 
+   but since the HTML is deleted, these lines won't do anything visible. */
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    color: var(--text-dark);
+}
+
+.contact-form label { display: block; margin-bottom: 5px; font-weight: bold; }
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+.full-width { width: 100%; }
+
+/* --- 8. FOOTER --- */
+footer { text-align: center; padding: 20px; background-color: #0a2a45; color: #888; font-size: 0.9rem; }
